@@ -1,0 +1,135 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .header .name {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .header .title {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #555;
+    margin-top: 5px;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    margin-top: 15px;
+  }
+  
+  .navbar ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  .navbar ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #007aff;
+    transition: color 0.3s;
+  }
+  
+  .navbar ul li a:hover {
+    color: #0056b3;
+  }
+  
+  /* Projects Section */
+  .projects {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #fff;
+  }
+  
+  .projects h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .project-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .project-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  .project-card p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Resume Section */
+  .resume {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f3f3f3;
+  }
+  
+  .resume h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .resume a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .resume a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f3f3f3;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
