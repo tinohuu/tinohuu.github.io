@@ -199,8 +199,8 @@ const projectDetails = {
       { label: "Date", value: "December 2019." },
     ],
     links: [
-      { label: "Video", url: "https://youtu.be/UwMS40bHyjQ?si=kFoLnbyhBMsDhCLS" },
-      { label: "Demo", url: "https://tinohu.itch.io/zoom" },
+      { label: "Video", url: "https://youtu.be/PxTTMQ0_fjE" },
+      { label: "Demo", url: "https://tinohu.itch.io/horizon-photographer" },
     ],
   },
   "skull-and-bones": {
@@ -352,7 +352,7 @@ const projectDetails = {
       { label: "Date", value: "January 2019." },
     ],
     links: [
-      { label: "Demo", url: "https://github.com/tinohuu" },
+      { label: "Video Demo", url: "https://youtu.be/4VqMU9Uhnoo" },
     ],
   },
   "webgl-zen-garden": {
@@ -503,7 +503,7 @@ const projectDetails = {
   },
   "solitaire-projects": {
     title: "Solitaire Start-up Projects",
-    category: "Games, Professional",
+    category: "Games, Start-up",
     content: [
       {
         type: "text",

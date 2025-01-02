@@ -86,3 +86,39 @@ main {
   max-width: 100%; /* 保证自适应宽度 */
   border-radius: 8px; /* 圆角 */
 }
+
+/* Ensure list items have proper indentation, even with floated images */
+ul {
+  list-style-position: inside; /* Keep bullet points inside the content area */
+  padding-left: 20px; /* Add padding for indentation */
+  margin-left: 0; /* Remove extra margin */
+}
+
+ul li {
+  margin-bottom: 8px; /* Add space between list items */
+  line-height: 1.6; /* Improve readability */
+  position: relative; /* Allow for fine-tuned layout adjustments */
+}
+
+.image-left {
+  float: left; /* Float image to the left */
+  margin: 10px 20px 10px 0; /* Add spacing between the image and content */
+  max-width: 50%; /* Limit image width */
+  border-radius: 8px; /* Maintain rounded corners */
+}
+
+.image-right {
+  float: right; /* Float image to the right */
+  margin: 10px 0 10px 20px; /* Add spacing */
+  max-width: 50%; /* Limit image width */
+  border-radius: 8px; /* Maintain rounded corners */
+}
+
+ul li::marker {
+  font-size: 1rem; /* Adjust marker size */
+  color: #000; /* Ensure visible color */
+}
+
+.project-content {
+  overflow: hidden; /* Clear floated elements to prevent layout issues */
+}
