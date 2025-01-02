@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <!-- 引用全局样式 -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- 引用项目页面样式 -->
+  <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+  <script src="script.js" defer></script>
+  <div id="navbar"></div>
+  
+  <main>
+    <section class="projects">
+      <h2>Jiahui's Featured Projects</h2>
+      
+      <!-- 分类筛选按钮 -->
+      <div class="filter-buttons">
+        <button class="filter-btn" data-category="all">All</button>
+        <button class="filter-btn" data-category="tech-art">Tech Art</button>
+        <button class="filter-btn" data-category="games">Games</button>
+        <button class="filter-btn" data-category="professional">Professional</button>
+        <button class="filter-btn" data-category="computer-science">Computer Science</button>
+      </div>
+
+      <!-- 项目网格 -->
+      <div class="project-grid" id="project-grid">
+        <!-- 项目将通过 JavaScript 动态加载 -->
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <!-- 引用项目脚本 -->
+  <script src="projects.js" defer></script>
+</body>
+</html>

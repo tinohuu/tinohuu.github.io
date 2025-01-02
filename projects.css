@@ -1,0 +1,180 @@
+/* Filter Buttons */
+/* Filter Buttons */
+.filter-buttons {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  gap: 15px; /* Uniform spacing between buttons */
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1d1d1f; /* Default Apple-style dark gray text */
+  background-color: #f5f5f7; /* Light gray background */
+  border: 1px solid #d2d2d7; /* Subtle border color */
+  border-radius: 30px; /* Rounded pill shape */
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Soft shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition for hover and active */
+}
+
+.filter-btn:hover {
+  background-color: #e5e5ea; /* Slightly darker gray on hover */
+  border-color: #b3b3b8; /* Subtle border darkening */
+  color: #000; /* Darker text for better contrast */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow on hover */
+}
+
+.filter-btn.active {
+  background-color: #1d1d1f; /* Deep dark gray background for selected state */
+  border-color: #000; /* Black border for selected state */
+  color: #f5f5f7; /* Light gray text for contrast */
+}
+
+.filter-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.5); /* Focus ring for accessibility */
+}
+
+
+  
+  /* Project Grid Layout */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three cards per row */
+    gap: 30px; /* Consistent spacing between cards */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Project Cards */
+  .project-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px; /* Softer rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effects */
+    aspect-ratio: 2 / 1; /* Maintain golden ratio */
+  }
+  
+  .project-button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: #007aff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .project-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .project-card.disabled {
+    background-color: #e0e0e0; /* Light gray background for disabled cards */
+    cursor: not-allowed; /* Show a not-allowed cursor */
+    pointer-events: none; /* Prevent interactions */
+  }
+  
+  .project-card.disabled img {
+    filter: none; /* Keep the image colors intact */
+  }
+  
+  .project-card.disabled .project-card-content {
+    color: inherit; /* Ensure text color remains unchanged */
+  }
+  
+  .project-card.featured {
+    position: relative; /* Allow positioning of the star icon */
+  }
+  
+  .project-card.featured::after {
+    content: "★"; /* Unicode for a solid star */
+    font-size: 1rem;
+    color: #f5c518; /* Subtle golden color for the star */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    opacity: 0.8; /* Slight transparency for subtle effect */
+  }
+  
+  .project-card.featured:hover::after {
+    opacity: 1; /* Fully visible when hovering over the card */
+    transform: scale(1.1); /* Slightly enlarge the star for interaction feedback */
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  
+  
+  
+  
+  .project-card img {
+    width: 150px; /* Fixed width */
+    height: 150px; /* Match height to width for 1:1 aspect ratio */
+    object-fit: cover; /* Crop the image to fit the container without distortion */
+    border-right: 1px solid #e5e5ea; /* Light divider between image and text */
+    border-radius: 8px; /* 左对齐图片的圆角 */
+  }  
+  
+  /* Project Card Content */
+  .project-card-content {
+    padding: 20px; /* Consistent spacing inside the card */
+    text-align: left;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center-align text vertically */
+  }
+  
+  .project-card-content h3 {
+    font-size: 1rem;
+    font-weight: 600; /* Slightly bolder for emphasis */
+    color: #1d1d1f; /* Apple-style dark gray */
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  
+  .project-card-content p {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #6e6e73; /* Subtle light gray for text */
+    line-height: 1.5;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .project-grid {
+      grid-template-columns: repeat(2, 1fr); /* Two cards per row on smaller screens */
+    }
+  
+    .filter-buttons {
+      flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+      gap: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .project-grid {
+      grid-template-columns: 1fr; /* One card per row on very small screens */
+    }
+  
+    .project-card-content h3 {
+      font-size: 1rem; /* Adjust text size for smaller screens */
+    }
+  
+    .project-card-content p {
+      font-size: 0.8rem;
+    }
+  }
+  

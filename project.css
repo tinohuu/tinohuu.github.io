@@ -1,0 +1,88 @@
+/* 全局内容居中对齐 */
+main {
+  max-width: 900px;
+  margin: 0 auto; /* 页面内容居中 */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 标题居中对齐 */
+.project-header h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.project-header .project-category {
+  text-align: center;
+  font-size: 1rem;
+  color: gray;
+}
+
+/* 主内容区域 */
+.project-content {
+  display: block; /* 确保内容为块级布局 */
+  line-height: 2; /* 列表行间距 */
+}
+
+/* 详情部分 */
+.project-details {
+  margin: 0 auto; /* 上下间距，整体水平居中 */
+  background: #f9f9f9;
+  border-radius: 8px;
+  max-width: 500px; /* 限制宽度 */
+  text-align: left; /* 文本左对齐 */
+  clear: both; /* 确保与正文部分分隔 */
+  display: flex; /* 使用 Flexbox 布局 */
+  flex-direction: column; /* 垂直排列内容 */
+  align-items: stretch; /* 确保子元素占满宽度 */
+  font-size: 1rem; /* 调整文字大小 */
+}
+
+
+/* 链接按钮样式 */
+.project-links {
+  margin-top: 20px; /* 与详情部分的间距 */
+  text-align: center; /* 链接按钮整体居中 */
+}
+
+.project-links a {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px 15px;
+  background-color: #007aff; /* Apple 蓝色 */
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-links a:hover {
+  background-color: #0056b3; /* 鼠标悬停效果 */
+  transform: scale(1.05);
+}
+
+/* 图片样式修复 */
+.image-left {
+  float: left;
+  margin: 10px 20px 10px 0;
+  max-width: 50%;
+  border-radius: 8px; /* 左对齐图片的圆角 */
+}
+
+/* 其他图片样式保持一致 */
+.image-right {
+  float: right;
+  margin: 10px 0 10px 20px;
+  max-width: 50%;
+  border-radius: 8px; /* 圆角 */
+}
+
+.image-center {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%; /* 保证自适应宽度 */
+  border-radius: 8px; /* 圆角 */
+}
