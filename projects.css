@@ -97,7 +97,7 @@
     color: #6e6e73;
     line-height: 1.5;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limit description to 3 lines */
+    -webkit-line-clamp: 5; /* Limit description to 3 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
