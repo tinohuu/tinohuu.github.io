@@ -500,23 +500,23 @@
     "category": "Games, Start-up",
     "content": [
       {
-        "type": "text",
-        "content": "\n<p><b>Project STA (Cancelled)</b></p>\n<p><i>Project STA</i> was a mobile solitaire card game inspired by the popular <b>Solitaire: Grand Harvest</b>. It innovatively merged classic Solitaire gameplay with farming simulation elements, allowing players to enjoy traditional card strategies while managing farm activities such as growing and harvesting crops. The game aimed to provide a relaxing yet engaging environment, blending thoughtful card play with enjoyable farming tasks.</p>\n\n<ul>\n  <li><b>Team Leadership:</b> Secured an initial investment of $200,000 and led a 12-member team to co-develop the game using Unity, focusing on gameplay programming.</li>\n  <li><b>Key Contributions:</b>\n    <ul>\n      <li>Developed core systems, including sound, save functionality, time management, maps, levels, and quests.</li>\n      <li>Designed and implemented a robust map editor for efficient level design.</li>\n      <li>Established pipelines for data conversion and offline time verification to ensure fair play mechanics.</li>\n    </ul>\n  </li>\n  <li><b>Challenges and Adaptations:</b> Due to changes in the policy environment and the financial situation of investors, I personally adjusted and finalized the game for release. Although the project was ultimately canceled, it provided invaluable insights into the full game development cycle.</li>\n</ul>\n        "
-      },
-      {
-        "type": "image",
-        "src": "/projects/solitaire-projects/1.png",
-        "alignment": "left"
-      },
-      {
         "type": "image",
         "src": "/projects/solitaire-projects/2.png",
         "alignment": "left"
       },
       {
         "type": "image",
+        "src": "/projects/solitaire-projects/1.png",
+        "alignment": "right"
+      },
+      {
+        "type": "image",
         "src": "/projects/solitaire-projects/3.png",
         "alignment": "left"
+      },
+      {
+        "type": "text",
+        "content": "\n<p><b>Project STA (Cancelled)</b></p>\n<p><i>Project STA</i> was a mobile solitaire card game inspired by the popular <b>Solitaire: Grand Harvest</b>. It innovatively merged classic Solitaire gameplay with farming simulation elements, allowing players to enjoy traditional card strategies while managing farm activities such as growing and harvesting crops. The game aimed to provide a relaxing yet engaging environment, blending thoughtful card play with enjoyable farming tasks.</p>\n\n<ul>\n  <li><b>Team Leadership:</b> Secured an initial investment of $200,000 and led a 12-member team to co-develop the game using Unity, focusing on gameplay programming.</li>\n  <li><b>Key Contributions:</b>\n    <ul>\n      <li>Developed core systems, including sound, save functionality, time management, maps, levels, and quests.</li>\n      <li>Designed and implemented a robust map editor for efficient level design.</li>\n      <li>Established pipelines for data conversion and offline time verification to ensure fair play mechanics.</li>\n    </ul>\n  </li>\n  <li><b>Challenges and Adaptations:</b> Due to changes in the policy environment and the financial situation of investors, I personally adjusted and finalized the game for release. Although the project was ultimately canceled, it provided invaluable insights into the full game development cycle.</li>\n</ul>\n        "
       },
       {
         "type": "text",
