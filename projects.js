@@ -17,11 +17,11 @@ const projects = [
     featured: true,
   },
   {
-    title: "Master of the Wind",
-    description: "An action-adventure prototype. Play as a wind deity controlling wind and nature to interact with objects.",
-    image: "./projects/master-of-the-wind/1.jpg",
-    link: "project.html?id=master-of-the-wind",
-    categories: ["games"],
+    title: "Solitaire Start-up Projects",
+    description: "Mobile casual games, experienced entrepreneurship, indie dev, and full dev cycles.",
+    image: "./projects/solitaire-projects/1.png",
+    link: "project.html?id=solitaire-projects",
+    categories: ["professional", "games"],
     featured: true,
   },
   {
@@ -29,7 +29,7 @@ const projects = [
     description: "Including Canny, Seam Carving, RANSAC Stitching, Optical Flow. Computer Vision course projects.",
     image: "./projects/computer-vision-projects/a3-1.png",
     link: "project.html?id=computer-vision-projects",
-    categories: ["computer-science", "tech-art"],
+    categories: ["computer-science", "tech-art", "games"],
   },
   {
     title: "BuyEase.ca",
@@ -45,19 +45,13 @@ const projects = [
     link: "",
     categories: ["games", "tech-art", "professional"],
   },
-  {
-    title: "Solitaire Start-up Projects",
-    description: "Mobile casual games, experienced entrepreneurship, indie dev, and full dev cycles.",
-    image: "./projects/solitaire-projects/1.png",
-    link: "project.html?id=solitaire-projects",
-    categories: ["professional", "games"],
-  },
+
   {
     title: "Simple Raytracer & WebGL Scenes",
     description: "Ray tracing in C++ with glm: sphere tracing, lighting support. Computer Graphics projects.",
     image: "./projects/simple-raytracer/1.png",
     link: "project.html?id=simple-raytracer-and-webgl-scenes",
-    categories: ["computer-science", "tech-art"],
+    categories: ["computer-science", "tech-art", "games"],
   },
   /*
   {
@@ -123,6 +117,13 @@ const projects = [
     image: "/github.png",
     link: "",
     categories: ["graphic-design"],
+  },
+  {
+    title: "Master of the Wind",
+    description: "An action-adventure prototype. Play as a wind deity controlling wind and nature to interact with objects.",
+    image: "./projects/master-of-the-wind/1.jpg",
+    link: "project.html?id=master-of-the-wind",
+    categories: ["games"],
   },
 ];
 
