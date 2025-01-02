@@ -21,7 +21,7 @@ const projects = [
     description: "Mobile casual games, experienced entrepreneurship, indie dev, and full dev cycles.",
     image: "./projects/solitaire-projects/1.png",
     link: "project.html?id=solitaire-projects",
-    categories: ["professional", "games"],
+    categories: ["professional", "games", "tech-art"],
     featured: true,
   },
   {
@@ -124,6 +124,7 @@ const projects = [
     image: "./projects/master-of-the-wind/1.jpg",
     link: "project.html?id=master-of-the-wind",
     categories: ["games"],
+
   },
 ];
 
