@@ -28,7 +28,7 @@ const resumeData = {
         <strong>University of Nottingham, Ningbo</strong> - <strong>BA (Hons) International Communications</strong> (06/2019, Ningbo)<br>
         <ul>
           <li>Courses: Communications, Culture, Media, Cultural Industries, Japanese, Game Studies.</li>
-          <li>Awards: Outstanding Contributor of the Faculty Life (2019); Head's Scholarship (2016).</li>
+          <li>Awards: Outstanding Contributor of the Faculty Life (2019); Ambassador, School of International Communications (2018-2019); Head's Scholarship (2016).</li>
         </ul>
       </div>
     `,
@@ -37,7 +37,7 @@ const resumeData = {
       <div>
         <strong>Ubisoft Toronto</strong> - <strong>Technical Art Intern</strong> (05/2024 - 08/2024, Toronto)<br>
         <ul>
-          <li>Contributed to the development of Prince of Persia: Sands of Time Remake. Created and organized metric mesh helpers in Maya and Anvil Engine, including data organization reports to enhance level design workflows.</li>
+          <li>Contributed to the development of Prince of Persia: Sands of Time Remake. Created and organized metric mesh helpers in 3ds Max and Anvil Engine, including data organization reports to enhance level design workflows.</li>
           <li>Experimented with a texture conversion tool in Substance Designer, transforming realistic textures into painterly styles. Researched and collaborated on other visual effects.</li>
           <li>Supported artists and level designers by resolving emerging technical challenges related to engine functionality and pipeline tools, ensuring efficient collaboration between teams.</li>
         </ul>
@@ -67,24 +67,22 @@ const resumeData = {
         <strong>Carta Tech</strong> - <strong>Co-Founder & Game Engineer</strong> (05/2021 - 11/2021, Beijing)<br>
         <ul>
           <li>Secured an initial investment of $200,000 and led a 12-member team to co-develop mobile solitaire games using Unity, focusing on gameplay programming.</li>
-          <li>Developed the map editor and core systems such as sound, save, time management, maps, levels, quests, map editors.</li>
-          <li>Implemented pipelines for data conversion and offline time verification to ensure fair play.</li>
-          <li>Successfully published the game on Google Play and the App Store, managing the entire release process independently.</li>
+          <li>Developed the map editor and core systems such as sound, save, time management, maps, levels, quests, and map editors.</li>
+          <li>Completed subsequent stages and successfully published the game on Google Play and the App Store, overseeing the complete development and release lifecycle.</li>
         </ul>
       </div>
       <div>
         <strong>Ubisoft Chengdu</strong> - <strong>Technical Design Intern</strong> (09/2020 - 04/2021, Chengdu)<br>
         <ul>
-          <li>Contributed to the development of the AAA project Skull & Bones, focusing on engine pipelines for wildlife, forts, and the visualized scripting tool (DSG).</li>
-          <li>Designed and implemented engine pipelines, developed scripted asset tools, and documented designer workflows to streamline production processes and enhance efficiency.</li>
-          <li>Compiled and maintained comprehensive technical, training, and design documentation on Confluence, supporting project knowledge management and fostering effective inter-team collaboration.</li>
+          <li>Contributed to the development of the AAA project Skull & Bones, focusing on engine pipelines for wildlife, forts, and the an FSM-based visualized scripting too.</li>
+          <li>Designed and implemented engine pipelines, scripted asset tools, and documented designer workflows. Compiled and maintained technical, training, and design documentation on Confluence, supporting project knowledge management and fostering effective inter-team collaboration.</li>
         </ul>
       </div>
       <div>
         <strong>Tencent</strong> - <strong>Game Design Intern</strong> (07/2020 - 09/2020, Shenzhen)<br>
         <ul>
           <li>Served as a game design intern at Morefun Studio, Tencent Games, working on the auto-chess project Chess Rush.</li>
-          <li>Participated in the graduate training program, which covered aspects of game design and business, culminating in the development of a personal game project.</li>
+          <li>Participated in the graduate training program in game design and business.</li>
         </ul>
       </div>
     `,
