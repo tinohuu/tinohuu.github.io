@@ -5,6 +5,11 @@ main {
   padding: 20px;
   box-sizing: border-box;
 }
+/* Override header container width to match project content width */
+.header .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
 
 /* 标题居中对齐 */
 .project-header h1 {

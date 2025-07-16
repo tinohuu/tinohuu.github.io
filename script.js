@@ -2,27 +2,25 @@
 fetch('navbar.html')
   .then(response => response.text())
   .then(data => {
-    // 将导航栏插入页面
     document.getElementById('navbar').innerHTML = data;
-
-    // 获取当前页面的路径
-    const currentPath = window.location.pathname;
-
-    // 高亮当前页面的导航项
-    document.querySelectorAll('.nav-item a').forEach(link => {
-      if (link.getAttribute('href') === currentPath.split('/').pop()) {
-        // 移除其他项的 active 类
-        document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-
-        // 添加 active 类到当前项
-        link.parentElement.classList.add('active');
-      }
-    });
+    // 高亮导航栏：如果存在项目详情内容，则高亮 Projects，否则高亮对应页面
+    const navItems = document.querySelectorAll('.nav-item');
+    // 清除所有高亮
+    navItems.forEach(item => item.classList.remove('active'));
+    // 判断是否为项目详情页（包含 project-content 区块）
+    if (document.getElementById('project-content')) {
+      const projLink = document.querySelector('.nav-item a[href="projects.html"]');
+      if (projLink) projLink.parentElement.classList.add('active');
+    } else {
+      // 普通页面，根据当前文件名高亮
+      const page = window.location.pathname.split('/').pop();
+      const link = document.querySelector(`.nav-item a[href="${page}"]`);
+      if (link) link.parentElement.classList.add('active');
+    }
   });
 
-  fetch('footer.html')
+fetch('footer.html')
   .then(response => response.text())
   .then(data => {
-    // 将页脚插入页面
     document.getElementById('footer').innerHTML = data;
   });

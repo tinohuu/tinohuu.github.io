@@ -21,8 +21,15 @@ const projects = [
     description: "Mobile casual games, experienced entrepreneurship, indie dev, and full dev cycles.",
     image: "./projects/solitaire-projects/1.png",
     link: "project.html?id=solitaire-projects",
-    categories: ["professional", "games", "tech-art"],
+    categories: ["games", "tech-art"],
     featured: true,
+  },
+    {
+    title: "Words with Friends",
+    description: "Zynga's classic word game, contributed to the tools as a technical art intern.",
+    image: "./projects/words-with-friends/1.jpg",
+    link: "",
+    categories: ["tech-art", "games", "professional"],
   },
   {
     title: "Computer Vision Projects",
@@ -62,9 +69,9 @@ const projects = [
     categories: ["computer-science"],
   },*/
   {
-    title: "Fog of War in Fantasea",
-    description: " ",
-    image: "/github.png",
+    title: "Fantasea",
+    description: "Rivergame's mobile adventure game, researched and implemented real-time VFX and custom shaders as a technical artist.",
+    image: "./projects/fantasea/1.jpg",
     link: "",
     categories: ["professional", "games", "tech-art"],
   },
@@ -79,7 +86,7 @@ const projects = [
     title: "Skull & Bones",
     description: "Contributed to engine pipelines for wildlife, forts, and a visualized scripting tool as a tech design intern at Ubisoft Chengdu.",
     image: "./projects/skull-and-bones/1.png",
-    link: "project.html?id=skull-and-bones",
+    link: "",
     categories: ["professional", "games"],
   },
   {
@@ -111,13 +118,14 @@ const projects = [
     link: "project.html?id=horizon-photographer",
     categories: ["games"],
   },
+  /*
   {
     title: "Graphics Design for University of Nottingham",
     description: "",
     image: "/github.png",
     link: "",
     categories: ["graphic-design"],
-  },
+  },*/
   {
     title: "Master of the Wind",
     description: "An action-adventure prototype. Play as a wind deity controlling wind and nature to interact with objects.",

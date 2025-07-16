@@ -1,61 +1,124 @@
 marked.setOptions({
-  breaks: true, // Enable line breaks
+  breaks: true
 });
+
+// Helper function to extract content from <!--marker--> blocks
+function extractBlock(md, marker) {
+  const regex = new RegExp(`<!--\\s*${marker}\\s*-->[\\s\\S]*?<!--\\s*end${marker}\\s*-->`, 'i');
+  const match = md.match(regex);
+  return match ? match[0].replace(new RegExp(`<!--\\s*${marker}\\s*-->|<!--\\s*end${marker}\\s*-->`, 'gi'), '').trim() : undefined;
+}
+
 
 // Get project ID from URL
 const params = new URLSearchParams(window.location.search);
 const projectId = params.get("id");
+if (!projectId) {
+  console.error("No project ID provided");
+  document.getElementById("project-content").innerHTML = "<p>Project not found</p>";
+} else {
+  // Fetch and render Markdown from the project's folder
+  fetch(`projects/${projectId}/${projectId}.md`)
+  .then(response => response.ok ? response.text() : Promise.reject('Failed to load Markdown'))
+  .then(mdContent => {
+    // Extract and render title and category in header
+    const titleBlock = extractBlock(mdContent, 'title');
+    const categoryBlock = extractBlock(mdContent, 'category');
+    let headerHtml = '';
+    if (titleBlock) {
+      headerHtml += `<h1 class="project-title">${marked.parseInline(titleBlock)}</h1>`;
+    }
+    if (categoryBlock) {
+      headerHtml += `<div class="project-category">${marked.parseInline(categoryBlock)}</div>`;
+    }
+    document.getElementById("project-header").innerHTML = headerHtml;
 
-// Fetch and render project details
-fetch('project.json')
-  .then((response) => response.ok ? response.json() : Promise.reject('Failed to load JSON'))
-  .then((projectDetails) => {
-    const project = projectDetails[projectId];
-    if (!project) throw new Error(`Project not found: ${projectId}`);
+    // Remove marker blocks from main content
+    let mdMain = mdContent
+      .replace(/<!--title-->[\s\S]*?<!--endtitle-->/gi, '')
+      .replace(/<!--category-->[\s\S]*?<!--endcategory-->/gi, '')
+      .replace(/<!--details-->[\s\S]*?<!--enddetails-->/gi, '')
+      .replace(/<!--links-->[\s\S]*?<!--endlinks-->/gi, '')
+      .trim();
 
-    // Render header
-    document.getElementById("project-header").innerHTML = `
-      <h1>${project.title}</h1>
-      <p class="project-category">Category: ${project.category}</p>
-    `;
+    // Parse and render main content
+    const contentHtml = marked.parse(mdMain);
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = contentHtml;
 
-    // Render content
-    const content = document.getElementById("project-content");
-    project.content.forEach((item) => {
-      if (item.type === "text") {
-        const p = document.createElement("p");
-        p.innerHTML = marked.parse(item.content.trim());
-        //p.innerHTML = item.isMarkdown ? marked.parse(item.content.trim()) : item.content;
-        content.appendChild(p);
-      } else if (item.type === "image") {
-        const img = document.createElement("img");
-        img.src = item.src;
-        img.className = `image-${item.alignment}`;
-        content.appendChild(img);
+    // Post-process images for alignment
+    tempDiv.querySelectorAll("img").forEach(img => {
+      const align = (img.alt || "").toLowerCase();
+      if (["left", "right", "center"].includes(align)) {
+        img.classList.add(`image-${align}`);
+        if (align === "center") {
+          const wrapper = document.createElement("div");
+          wrapper.className = "image-center-wrapper";
+          img.parentNode.insertBefore(wrapper, img);
+          wrapper.appendChild(img);
+        }
+      }
+      img.alt = "";
+      img.style.display = "block";
+      // Fix relative image paths
+      if (!img.src.startsWith('http')) {
+        img.src = `projects/${projectId}/${img.getAttribute('src')}`;
       }
     });
 
-    // Render details
-    const detailsSection = document.getElementById("project-details");
-    const detailsList = document.createElement("ul");
-    project.details.forEach((detail) => {
-      const li = document.createElement("li");
-      li.innerHTML = `<strong>${detail.label}:</strong> ${detail.value}`;
-      detailsList.appendChild(li);
-    });
-    detailsSection.appendChild(detailsList);
+    // Update content
+    document.getElementById("project-content").innerHTML = tempDiv.innerHTML;
 
-    // Render links
-    const links = document.createElement("div");
-    links.className = "project-links";
-    project.links.forEach((link) => {
-      const a = document.createElement("a");
-      a.href = link.url;
-      a.textContent = link.label;
-      a.target = "_blank";
-      a.className = "btn";
-      links.appendChild(a);
-    });
-    detailsSection.appendChild(links);
+    // Render details only in #project-details
+    const detailsSection = document.getElementById("project-details");
+    if (detailsSection) {
+      // 清空除 project-links 外的内容
+      Array.from(detailsSection.children).forEach(child => {
+        if (child.id !== "project-links") child.remove();
+      });
+      const detailsBlock = extractBlock(mdContent, 'details');
+      if (detailsBlock) {
+        const detailsList = document.createElement("ul");
+        detailsList.className = "project-details";
+        detailsBlock.split(/\r?\n/).forEach(line => {
+          if (line.trim()) {
+            const li = document.createElement("li");
+            li.innerHTML = marked.parseInline(line.trim());
+            detailsList.appendChild(li);
+          }
+        });
+        detailsSection.insertBefore(detailsList, document.getElementById("project-links"));
+      }
+    }
+
+    // Render links only in #project-links
+    const projectLinksDiv = document.getElementById("project-links");
+    if (projectLinksDiv) {
+      projectLinksDiv.innerHTML = "";
+      const linksBlock = extractBlock(mdContent, 'links');
+      if (linksBlock) {
+        const linkRegex = /\[([^\]]+)\]\(([^\)]+)\)/g;
+        let match;
+        while ((match = linkRegex.exec(linksBlock)) !== null) {
+          const a = document.createElement("a");
+          a.href = match[2];
+          a.textContent = match[1];
+          a.target = "_blank";
+          a.className = "btn";
+          projectLinksDiv.appendChild(a);
+        }
+      }
+    }
   })
-  .catch((error) => console.error(error));
+  .catch(error => {
+    console.error(error);
+    document.getElementById("project-content").innerHTML = "<p>Failed to load project</p>";
+  });
+}
+// 强制高亮导航栏 Projects
+document.addEventListener('DOMContentLoaded', () => {
+  const navItems = document.querySelectorAll('.nav-item');
+  navItems.forEach(item => item.classList.remove('active'));
+  const projLink = document.querySelector('.nav-item a[href="projects.html"]');
+  if (projLink) projLink.parentElement.classList.add('active');
+});

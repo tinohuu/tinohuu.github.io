@@ -1,4 +1,4 @@
-{
+/*{
   "recreation-room": {
     "title": "Recreation Room on Venus",
     "category": "Games, Tech Art",
@@ -69,54 +69,6 @@
       {
         "label": "Source",
         "url": "https://drive.google.com/drive/folders/1RigQNrH1dbJWu4M-SCXuWSvODtHiBLe-?usp=drive_link"
-      }
-    ]
-  },
-  "simple-raytracer-and-webgl-scenes": {
-    "title": "Simple Raytracer & WebGL Scenes",
-    "category": "Computer Graphics, Techical Art.",
-    "content": [
-        {
-          "type": "image",
-          "src": "/projects/simple-raytracer/1.png",
-          "alignment": "left"
-        },
-        {
-          "type": "text",
-          "content": "**Simple Ray Tracer**\n\nSimple Ray Tracer is a project demonstrating the implementation of a simple ray tracer in C++, utilizing the **glm** library for vector mathematics and transformations.\n\nThe ray tracer is designed to render 3D scenes by simulating the behavior of light rays interacting with objects in a virtual environment. Key features include:\n\n- **Sphere Tracing:** Implements a distance-based method for ray-object intersection testing, optimized for rendering implicit surfaces such as spheres.\n- **Lighting:** Supports basic lighting models, including ambient, diffuse, and specular components, to simulate realistic light interactions.\n- **Reflections:** Introduces basic reflective surfaces, allowing for mirror-like effects and realistic light bounces within the scene.\n- **Scene Configuration:** Simple and flexible scene setup through code, enabling the addition of multiple spheres and light sources for custom scenarios.\n- **Performance Optimization:** Uses efficient algorithms for ray tracing computations to achieve reasonable performance on basic hardware.\n\nThis project serves as an educational tool for understanding the core principles of ray tracing, including ray-surface intersection, shading, and reflection calculations. The code is clean and modular, making it a great starting point for extending functionality to include features such as textures, advanced reflections, and anti-aliasing."
-        },
-        {
-          "type": "image",
-          "src": "/projects/webgl-zen-garden/1.png",
-          "alignment": "left"
-        },
-        {
-          "type": "text",
-          "content": "**Simple WebGL Zen Garden**\n\nSimple WebGL Zen Garden is a course project developed for the **Introduction to 3D Computer Graphics** course at York University. This WebGL-based interactive experience transports users to a serene Japanese-style garden sandbox, offering a tranquil and immersive virtual environment.\n\nThe scene is thoughtfully designed to capture the essence of traditional Japanese aesthetics. Key elements include a striking **red Torii gate**, symbolic of passage into sacred spaces, and meticulously crafted **stone lanterns** that provide a subtle, ambient glow. The garden also features **circular ponds**, reflecting the surrounding landscape and enhancing the overall sense of calm. These components are set against a lush backdrop of greenery, creating a harmonious and picturesque virtual world.\n\nDynamic elements bring the garden to life, including **animated rabbits** that hop playfully around the scene, adding a touch of whimsy and vitality. The reeds and grasses gently sway in response to a simulated breeze, a visual effect achieved through the implementation of **vertex shaders** and real-time animation techniques. These details not only enhance the realism of the environment but also contribute to the meditative atmosphere of the experience.\n\n**Zen Garden** serves as both a technical and artistic exploration, demonstrating proficiency in 3D modeling, real-time rendering, and WebGL programming. The project encapsulates the integration of technical skill and artistic sensibility, offering users a peaceful digital escape into a meticulously designed virtual sanctuary."
-        }
-      ],
-    "details": [
-      {
-        "label": "Tools & Skills",
-        "value": "C++, glm, JavaScript, WebGL."
-      },
-      {
-        "label": "Role",
-        "value": "Programmer."
-      },
-      {
-        "label": "Course",
-        "value": "Computer Graphics (Fall 2023), York University."
-      }
-    ],
-    "links": [
-      {
-        "label": "Raytracer GitHub",
-        "url": "https://github.com/tinohuu/simple-raytracer"
-      },
-      {
-        "label": "WebGL Garden GitHub",
-        "url": "https://github.com/tinohuu/zen-garden-webgl"
       }
     ]
   },
@@ -556,4 +508,4 @@
       }
     ]
   }
-}
+}*/
