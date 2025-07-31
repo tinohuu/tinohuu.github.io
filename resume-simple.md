@@ -21,7 +21,7 @@
 ## <span class="emoji">💼</span> Experience
 - **Zynga Toronto** | *Technical Art Intern* | May 2025 – Aug 2025
   - Contributed to **Words With Friends** by designing and coding 4 custom Unity editor tools.
-  - Investigated and resolved 30+ issues, ensuring aesthetics and performance.
+  - Investigated and resolved dozens of issues, ensuring aesthetics and performance.
 - **Ubisoft Toronto** | *Technical Art Intern* | May 2024 – Aug 2024
   - Won **Ubisoft NEXT 2024** to work on **Prince of Persia: Sands of Time Remake**.
   - Created 3D metric-mesh helpers and a Substance Designer texture-conversion tool.
