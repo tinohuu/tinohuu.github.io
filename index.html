@@ -3,77 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hi, I'm Jiahui.</title>
+  <meta name="theme-color" content="#f5f5f7">
+  <meta name="description" content="Jiahui Hu is a Technical Artist at Velan Studios, working across rendering, real-time VFX, pipelines, tools, procedural content, and cinematics.">
+  <title>Jiahui Hu — Technical Artist at Velan Studios</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    main {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: calc(100vh - 60px);
-      padding: 20px;
-    }
-    .intro {
-      text-align: center;
-      max-width: 600px;
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .intro img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-      border: 2px solid #ddd;
-    }
-    .intro h2 {
-      font-size: 28px;
-      margin: 0;
-      color: #333;
-    }
-    .intro p {
-      text-align: left;
-      font-size: 16px;
-      line-height: 1.6;
-      color: #555;
-    }
-    #footer {
-      text-align: center;
-      padding: 10px;
-      font-size: 14px;
-      color: #999;
-      background-color: #f4f4f4;
-      border-top: 1px solid #ddd;
-    }
-  </style>
 </head>
-<body>
+<body class="home-page">
   <div id="navbar"> </div>
 
   <main>
-    <section class="intro">
-      <img src="avatar.jpeg" alt="My Avatar" class="avatar" />
-      <h2>👋 Hello, I'm Jiahui!</h2>
-      <p>
-        Hey there! I’m Jiahui Hu—a hands-on Technical Artist and Programmer who’s turned big ideas into real experiences at Zynga Toronto and Ubisoft Toronto (Ubisoft NEXT award winner!). ✨ I love crafting custom tools, shaders, and VFX in Unity and Unreal, smoothing out pipelines, and teaming up with artists and designers to ship games that look and play great. 🚀 Let’s build something awesome together! 🎮
-      </p>
-      <div class="button-container">
-        <a href="projects.html" class="btn">🎨 Portfolio</a>
-        <a href="resume.html" class="btn">📄 Resume</a>
+    <section class="intro" aria-labelledby="hero-title">
+      <div class="intro-copy">
+        <p class="eyebrow"><span class="status-dot"></span> Technical Artist <span class="eyebrow-divider">·</span> Velan Studios</p>
+        <h1 id="hero-title">Hi, I’m <span>Jiahui.</span></h1>
+        <p class="intro-description">
+          I’m a Technical Artist at Velan Studios, working across technical art and real-time graphics—from shaders and VFX to production tools, pipelines, procedural content, and in-engine cinematics.
+        </p>
+        <div class="button-container">
+          <a href="projects.html" class="btn btn-primary">Explore my work <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="career-details" aria-label="Previous studios and project experience">
+          <div class="career-item">
+            <span>Previously at</span>
+            <strong>Zynga Toronto</strong>
+            <strong>Ubisoft Toronto</strong>
+            <strong>Ubisoft Chengdu</strong>
+          </div>
+          <div class="career-item">
+            <span>Project experience</span>
+            <strong>Star Fox</strong>
+            <strong>Words with Friends</strong>
+            <strong>Prince of Persia: The Sands of Time Remake</strong>
+            <strong>Skull &amp; Bones</strong>
+          </div>
+        </div>
+      </div>
+      <div class="intro-visual">
+        <div class="visual-glow" aria-hidden="true"></div>
+        <img src="avatar.jpeg" alt="Portrait of Jiahui Hu" class="avatar">
+        <div class="visual-caption">
+          <span class="caption-mark" aria-hidden="true">✳</span>
+          <span><strong>Technical Artist</strong><small>Velan Studios</small></span>
+        </div>
+      </div>
+    </section>
+    <section class="expertise" aria-labelledby="expertise-title">
+      <div class="expertise-heading">
+        <p class="section-kicker">Skills &amp; focus</p>
+        <h2 id="expertise-title">Technical art<br>&amp; graphics.</h2>
+        <p>Tools, content workflows, and real-time graphics for game production.</p>
+      </div>
+      <div class="expertise-grid">
+        <article class="expertise-card">
+          <span class="expertise-number">01</span>
+          <h3>Rendering</h3>
+          <p>Shader and material authoring, rendering features, visual debugging, and frame-time optimization.</p>
+        </article>
+        <article class="expertise-card">
+          <span class="expertise-number">02</span>
+          <h3>Real-time VFX</h3>
+          <p>Build real-time particle and shader effects; profile performance and support iteration in-engine.</p>
+        </article>
+        <article class="expertise-card">
+          <span class="expertise-number">03</span>
+          <h3>Pipelines &amp; tools</h3>
+          <p>Develop editor tools and content pipelines to automate repetitive tasks and validate assets.</p>
+        </article>
+        <article class="expertise-card">
+          <span class="expertise-number">04</span>
+          <h3>Procedural content</h3>
+          <p>Build procedural content workflows for flexible authoring and repeatable results.</p>
+        </article>
+        <article class="expertise-card">
+          <span class="expertise-number">05</span>
+          <h3>Cinematics</h3>
+          <p>Set up and support in-engine cinematics, including real-time rendering and content integration.</p>
+        </article>
+        <article class="expertise-card">
+          <span class="expertise-number">06</span>
+          <h3>Engines, graphics &amp; vision</h3>
+          <p>Work in Unity and Unreal; apply computer graphics and vision fundamentals to rendering and interactive features.</p>
+        </article>
       </div>
     </section>
   </main>
-  
 
   <div id="footer"> </div>
 </body>

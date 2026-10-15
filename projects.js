@@ -1,4 +1,30 @@
-// 项目数据配置
+const industryProjects = [
+  {
+    title: "Star Fox",
+    studio: "Velan Studios & Nintendo",
+    description: "As a Technical Artist, contributed shaders, VFX, and cinematic tools, and helped investigate and fix bugs.",
+    image: "./projects/star-fox/starfox.jpg",
+  },
+  {
+    title: "Words with Friends",
+    studio: "Zynga Toronto",
+    description: "Contributed to tools as a technical art intern.",
+    image: "./projects/words-with-friends/1.jpg",
+  },
+  {
+    title: "Prince of Persia: The Sands of Time Remake",
+    studio: "Ubisoft Toronto",
+    description: "Contributed to technical art development.",
+    image: "./projects/sands-of-time/1.png",
+  },
+  {
+    title: "Skull & Bones",
+    studio: "Ubisoft Chengdu",
+    description: "Contributed to engine pipelines for wildlife, forts, and a visual scripting tool.",
+    image: "./projects/skull-and-bones/1.png",
+  },
+];
+
 const projects = [
   {
     title: "Recreation Room on Venus",
@@ -24,13 +50,6 @@ const projects = [
     categories: ["games", "tech-art"],
     featured: true,
   },
-    {
-    title: "Words with Friends",
-    description: "Zynga's classic word game, contributed to the tools as a technical art intern.",
-    image: "./projects/words-with-friends/1.jpg",
-    link: "",
-    categories: ["tech-art", "games", "professional"],
-  },
   {
     title: "Computer Vision Projects",
     description: "Including Canny, Seam Carving, RANSAC Stitching, Optical Flow. Computer Vision course projects.",
@@ -41,18 +60,10 @@ const projects = [
   {
     title: "BuyEase.ca",
     description: "A campus marketplace website using React and MangoDB. Software Design course project.",
-    image: "/github.png",
+    image: "./github.png",
     link: "",
     categories: ["computer-science"],
   },
-  {
-    title: "Prince of Persia: Sands of Time Remake",
-    description: "Contributed to tech art codev as a tech art intern at Ubisoft Toronto.",
-    image: "./projects/sands-of-time/1.png",
-    link: "",
-    categories: ["games", "tech-art", "professional"],
-  },
-
   {
     title: "Simple Raytracer & WebGL Scenes",
     description: "Ray tracing in C++ with glm: sphere tracing, lighting support. Computer Graphics projects.",
@@ -60,14 +71,6 @@ const projects = [
     link: "project.html?id=simple-raytracer-and-webgl-scenes",
     categories: ["computer-science", "tech-art", "games"],
   },
-  /*
-  {
-    title: "Simple WebGL Zen Garden",
-    description: "A simple Japanese garden sandbox, fully crafted from scratch with WebGL code.",
-    image: "./projects/webgl-zen-garden/1.png",
-    link: "project.html?id=webgl-zen-garden",
-    categories: ["computer-science"],
-  },*/
   {
     title: "Fantasea",
     description: "Rivergame's mobile adventure game, researched and implemented real-time VFX and custom shaders as a technical artist.",
@@ -78,16 +81,9 @@ const projects = [
   {
     title: "Motion Parallax Depth",
     description: "Contributed to MPDepth projects as a research programmer at BioMotionLab, York University.",
-    image: "/github.png",
+    image: "./github.png",
     link: "",
     categories: ["computer-science", "professional"],
-  },
-  {
-    title: "Skull & Bones",
-    description: "Contributed to engine pipelines for wildlife, forts, and a visualized scripting tool as a tech design intern at Ubisoft Chengdu.",
-    image: "./projects/skull-and-bones/1.png",
-    link: "",
-    categories: ["professional", "games"],
   },
   {
     title: "Chess Rush",
@@ -103,7 +99,6 @@ const projects = [
     link: "project.html?id=goose-college",
     categories: ["games"],
   },
-
   {
     title: "Blacksmith",
     description: "A pixel-art card meta-game prototype. Coursework project.",
@@ -118,102 +113,142 @@ const projects = [
     link: "project.html?id=horizon-photographer",
     categories: ["games"],
   },
-  /*
-  {
-    title: "Graphics Design for University of Nottingham",
-    description: "",
-    image: "/github.png",
-    link: "",
-    categories: ["graphic-design"],
-  },*/
   {
     title: "Master of the Wind",
     description: "An action-adventure prototype. Play as a wind deity controlling wind and nature to interact with objects.",
     image: "./projects/master-of-the-wind/1.jpg",
     link: "project.html?id=master-of-the-wind",
     categories: ["games"],
-
   },
 ];
 
-
-// 动态加载项目
+const industryGrid = document.getElementById("industry-grid");
 const projectGrid = document.getElementById("project-grid");
+const emptyProjects = document.getElementById("empty-projects");
+
+function renderIndustryProjects() {
+  industryProjects.forEach((project) => {
+    const card = document.createElement("article");
+    card.classList.add("industry-card", `industry-card--${project.variant || "image"}`);
+
+    if (project.image) {
+      const image = document.createElement("img");
+      image.src = project.image;
+      image.alt = "";
+      image.loading = "lazy";
+      card.appendChild(image);
+    } else {
+      const artwork = document.createElement("div");
+      artwork.classList.add("industry-artwork");
+      artwork.setAttribute("aria-hidden", "true");
+      artwork.innerHTML = '<span class="star-field"></span><span class="star-fox-mark">STAR<br>FOX</span><span class="star-fox-orbit"></span>';
+      card.appendChild(artwork);
+    }
+
+    const shade = document.createElement("div");
+    shade.classList.add("industry-card-shade");
+    shade.setAttribute("aria-hidden", "true");
+    card.appendChild(shade);
+
+    const content = document.createElement("div");
+    content.classList.add("industry-card-content");
+
+    const studio = document.createElement("p");
+    studio.classList.add("industry-studio");
+    studio.textContent = project.studio;
+
+    const title = document.createElement("h3");
+    title.textContent = project.title;
+
+    const description = document.createElement("p");
+    description.classList.add("industry-description");
+    description.textContent = project.description;
+
+    content.append(studio, title, description);
+    card.appendChild(content);
+    industryGrid.appendChild(card);
+  });
+}
 
 function displayProjects(category) {
-  projectGrid.innerHTML = ""; // 清空现有项目
-  const filteredProjects =
-    category === "all"
-      ? projects
-      : projects.filter((project) =>
-        project.categories.includes(category)
-      );
+  projectGrid.innerHTML = "";
+  const filteredProjects = category === "all"
+    ? projects
+    : projects.filter((project) => project.categories.includes(category));
 
   filteredProjects.forEach((project) => {
-    const card = document.createElement("div");
+    const card = document.createElement(project.link ? "a" : "article");
     card.classList.add("project-card");
     if (project.featured) {
-      card.classList.add("featured"); // Add 'featured' class for highlighted projects
+      card.classList.add("featured");
     }
-    if (!project.link) {
-      card.classList.add("disabled");
-    } else {
-      card.addEventListener("click", () => {
-        window.location.href = project.link;
-      });
+    if (project.link) {
+      card.href = project.link;
     }
-    card.innerHTML = `
-            <img src="${project.image}" alt="${project.title}">
-            <div class="project-card-content">
-              <h3>${project.title}</h3>
-              <p>${project.description}</p>
-            </div>
-          `;
+
+    const image = document.createElement("img");
+    image.src = project.image;
+    image.alt = "";
+    image.loading = "lazy";
+
+    const content = document.createElement("div");
+    content.classList.add("project-card-content");
+
+    const title = document.createElement("h3");
+    title.textContent = project.title;
+
+    const description = document.createElement("p");
+    description.textContent = project.description;
+
+    content.append(title, description);
+    card.append(image, content);
     projectGrid.appendChild(card);
   });
 
+  emptyProjects.hidden = filteredProjects.length > 0;
 }
 
-// 读取URL中的查询参数
+const filterButtons = [...document.querySelectorAll(".filter-btn")];
+const validCategories = new Set(filterButtons.map((button) => button.dataset.category));
+
 function getCategoryFromURL() {
-  const params = new URLSearchParams(window.location.search);
-  return params.get("category") || "all"; // 如果没有参数，默认显示 "all"
+  const category = new URLSearchParams(window.location.search).get("category");
+  return validCategories.has(category) ? category : "all";
 }
 
-// 更新URL中的查询参数
+function setActiveCategory(category) {
+  filterButtons.forEach((button) => {
+    const isActive = button.dataset.category === category;
+    button.classList.toggle("active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
+  displayProjects(category);
+}
+
 function updateURL(category) {
   const params = new URLSearchParams(window.location.search);
-  params.set("category", category);
-  const newURL =
-    window.location.pathname + "?" + params.toString();
-  window.history.pushState({}, "", newURL); // 更新浏览器历史记录
+  if (category === "all") {
+    params.delete("category");
+  } else {
+    params.set("category", category);
+  }
+
+  const query = params.toString();
+  const newURL = window.location.pathname + (query ? `?${query}` : "");
+  window.history.pushState({}, "", newURL);
 }
 
-// 初始加载项目，根据URL中的分类
-const initialCategory = getCategoryFromURL();
-displayProjects(initialCategory);
+renderIndustryProjects();
+setActiveCategory(getCategoryFromURL());
 
-// 分类筛选功能
-const filterButtons = document.querySelectorAll(".filter-btn");
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    // 移除其他按钮的 active 类
-    filterButtons.forEach((btn) => btn.classList.remove("active"));
-    button.classList.add("active");
-
-    // 获取按钮对应的分类并更新URL
-    const category = button.getAttribute("data-category");
+    const { category } = button.dataset;
     updateURL(category);
-
-    // 根据分类显示项目
-    displayProjects(category);
+    setActiveCategory(category);
   });
 });
 
-// 设置初始激活按钮
-filterButtons.forEach((button) => {
-  const category = button.getAttribute("data-category");
-  if (category === initialCategory) {
-    button.classList.add("active");
-  }
+window.addEventListener("popstate", () => {
+  setActiveCategory(getCategoryFromURL());
 });
