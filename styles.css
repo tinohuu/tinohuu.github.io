@@ -178,11 +178,71 @@ body {
 /* ========================== */
 
 .footer {
-  text-align: center;
-  padding: 20px 0;
-  background-color: #f3f3f3;
-  font-size: 0.9rem;
-  color: #666;
+  width: 100%;
+  padding: 0.85rem 2rem;
+  border-top: 1px solid rgba(29, 29, 31, 0.09);
+  background: rgba(255, 255, 255, 0.36);
+  color: #86868b;
+  font-size: 0.78rem;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1120px;
+  min-height: 28px;
+  margin: 0 auto;
+}
+
+.footer-copyright {
+  flex: 0 0 auto;
+  letter-spacing: 0.01em;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.2rem;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  color: #515154;
+  font-weight: 550;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #0071e3;
+}
+
+.footer-link-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(29, 29, 31, 0.16);
+  border-radius: 50%;
+  color: #6e6e73;
+  font-size: 0.67rem;
+  font-weight: 650;
+  line-height: 1;
+}
+
+.footer-link-mark--linkedin {
+  font-size: 0.62rem;
+}
+
+.footer-link-arrow {
+  color: #86868b;
+  font-size: 0.72rem;
 }
 
 /* 按钮容器 */
@@ -500,29 +560,6 @@ body {
   line-height: 1.65;
 }
 
-.home-page .contact {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.6rem 1rem;
-  width: 100%;
-  max-width: 1120px;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(29, 29, 31, 0.1);
-  color: #86868b;
-  font-size: 0.9rem;
-}
-
-.home-page .contact a {
-  color: #1d1d1f;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.home-page .contact a:hover {
-  text-decoration: underline;
-}
-
 .home-page .toolset {
   margin-top: clamp(2rem, 4vw, 3.5rem);
 }
@@ -608,11 +645,6 @@ body {
   font-size: 0.72rem;
 }
 
-.home-page #footer {
-  border-top: 1px solid rgba(29, 29, 31, 0.06);
-  background: transparent;
-}
-
 @media (max-width: 760px) {
   .home-page main {
     min-height: auto;
@@ -654,6 +686,24 @@ body {
   .home-page .visual-caption {
     right: max(0px, calc(50% - 170px));
     bottom: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer {
+    padding: 0.9rem 1.15rem;
+  }
+
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column-reverse;
+    gap: 0.6rem;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.7rem 1rem;
   }
 }
 
