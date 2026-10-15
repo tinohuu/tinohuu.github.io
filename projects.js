@@ -201,7 +201,15 @@ function displayProjects(category) {
     description.textContent = project.description;
 
     content.append(title, description);
-    card.append(image, content);
+    if (project.link) {
+      const chevron = document.createElement("span");
+      chevron.classList.add("project-card-chevron");
+      chevron.setAttribute("aria-hidden", "true");
+      chevron.textContent = "›";
+      card.append(image, content, chevron);
+    } else {
+      card.append(image, content);
+    }
     projectGrid.appendChild(card);
   });
 
