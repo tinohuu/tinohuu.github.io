@@ -2,25 +2,25 @@ const industryProjects = [
   {
     title: "Star Fox",
     studio: "Velan Studios & Nintendo",
-    description: "As a Technical Artist, contributed shaders, VFX, and cinematic tools, and helped investigate and fix bugs.",
+    description: "Implemented shaders and real-time VFX, built cinematic tools, and debugged rendering issues.",
     image: "./projects/star-fox/starfox.jpg",
   },
   {
     title: "Words with Friends",
     studio: "Zynga Toronto",
-    description: "Contributed to tools as a technical art intern.",
+    description: "Developed internal tools and automation to streamline asset workflows.",
     image: "./projects/words-with-friends/1.jpg",
   },
   {
     title: "Prince of Persia: The Sands of Time Remake",
     studio: "Ubisoft Toronto",
-    description: "Contributed to technical art development.",
+    description: "Supported technical art development and engine-side content integration.",
     image: "./projects/sands-of-time/1.png",
   },
   {
     title: "Skull & Bones",
     studio: "Ubisoft Chengdu",
-    description: "Contributed to engine pipelines for wildlife, forts, and a visual scripting tool.",
+    description: "Built engine pipelines for wildlife and forts, and a visual scripting tool.",
     image: "./projects/skull-and-bones/1.png",
   },
 ];
